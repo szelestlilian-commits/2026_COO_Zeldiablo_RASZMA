@@ -3,16 +3,15 @@
 ## Membres du groupe
 
 Liste des membres du projet :
-- Prenom Nom adresse@etu.univ-lorraine
-- Prenom Nom adresse@etu.univ-lorraine
-- Prenom Nom adresse@etu.univ-lorraine
-- Prenom Nom adresse@etu.univ-lorraine
+- Lilian Szelest lilian.szelest1@etu.univ-lorraine.fr
+- Clément Marin clement.marin5@etu.univ-lorraine.fr
+- Paul Ravonjison paul.ravonjison4@etu.univ-lorraine.fr
+
 
 Liste des adresses mail
-adresse@etu.univ-lorraine
-adresse@etu.univ-lorraine
-adresse@etu.univ-lorraine
-adresse@etu.univ-lorraine
+lilian.szelest1@etu.univ-lorraine.fr
+clement.marin5@etu.univ-lorraine.fr
+paul.ravonjison4@etu.univ-lorraine.fr
 
 ## Etat du projet
 
