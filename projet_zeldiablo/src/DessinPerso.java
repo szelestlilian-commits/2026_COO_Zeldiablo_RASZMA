@@ -19,7 +19,7 @@ public class DessinPerso implements DessinJeu {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, image.getWidth(), image.getHeight());
 
-// dessin de toutes les cases
+        // dessin de toutes les blocs
         for (int x = 0; x < Labyrinthe.LARGEUR; x++) {
             for (int y = 0; y < Labyrinthe.HAUTEUR; y++) {
                 if (jeuEnCours.getLabyrinthe().estMur(x, y)) {
@@ -28,7 +28,7 @@ public class DessinPerso implements DessinJeu {
                     g.setColor(Color.LIGHT_GRAY);
                 }
                 g.fillRect(x * TAILLE, y * TAILLE, TAILLE, TAILLE);
-                // bordure de chaque case
+                // bordure de chaque bloc
                 g.setColor(Color.GRAY);
                 g.drawRect(x * TAILLE, y * TAILLE, TAILLE, TAILLE);
             }
