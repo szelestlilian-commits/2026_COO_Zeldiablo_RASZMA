@@ -4,6 +4,9 @@ import Labyrinthe.Labyrinthe;
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * moteurJeu.Jeu simple dans lequel un personnage se déplace librement.
  * Implémente l'interface moteurJeu.Jeu pour fonctionner avec le moteurJeu.MoteurGraphique.
@@ -13,6 +16,7 @@ public class JeuPerso implements Jeu {
     /** Le personnage contrôlé par le joueur */
     private Personnage pj;
     private Labyrinthe labyrinthe;
+    private List<Monstre> monstres;
 
     /**
      * Construit le jeu et initialise le personnage.
@@ -21,6 +25,16 @@ public class JeuPerso implements Jeu {
         this.labyrinthe = new Labyrinthe();
         this.labyrinthe.placerMursAleatoires(100);
         this.pj = new Personnage();
+        this.monstres = new ArrayList<>();
+
+        monstres.add(new Monstre(1, 1));
+        monstres.add(new Monstre(8, 1));
+        monstres.add(new Monstre(1, 8));
+        monstres.add(new Monstre(8, 8));
+
+        for (Monstre m : monstres) {
+            m.deplacer(pj, labyrinthe);
+        }
     }
 
     @Override
@@ -50,4 +64,6 @@ public class JeuPerso implements Jeu {
 
 
     public Labyrinthe getLabyrinthe() { return labyrinthe; }
+
+    public List<Monstre> getMonstres() { return monstres; }
 }
