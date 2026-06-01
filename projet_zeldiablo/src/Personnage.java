@@ -1,3 +1,4 @@
+import moteurJeu.Commande;
 
 /**
  * Représente un personnage et sa position dans le jeu.

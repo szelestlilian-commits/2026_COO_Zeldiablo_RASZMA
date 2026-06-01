@@ -1,6 +1,9 @@
+import moteurJeu.Commande;
+import moteurJeu.Jeu;
+
 /**
- * Jeu simple dans lequel un personnage se déplace librement.
- * Implémente l'interface Jeu pour fonctionner avec le MoteurGraphique.
+ * moteurJeu.Jeu simple dans lequel un personnage se déplace librement.
+ * Implémente l'interface moteurJeu.Jeu pour fonctionner avec le moteurJeu.MoteurGraphique.
  */
 public class JeuPerso implements Jeu {
 

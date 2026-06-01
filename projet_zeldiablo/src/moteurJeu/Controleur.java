@@ -1,3 +1,5 @@
+package moteurJeu;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -17,7 +19,7 @@ public class Controleur implements KeyListener {
 	 * commande a retourner la difference avec la commandeencours vient du fait
 	 * qu'on veut memoriser une touche appuyee
 	 */
-	private  Commande commandeARetourner;
+	private Commande commandeARetourner;
 
 	/**
 	 * construction du controleur par defaut le controleur n'a pas de commande

@@ -1,3 +1,5 @@
+package moteurJeu;
+
 import javax.swing.JFrame;
 
 
@@ -26,7 +28,7 @@ public class InterfaceGraphique  {
 	 * @param afficheurUtil l'afficheur a utiliser dans le moteur
 	 * 
 	 */
-	public InterfaceGraphique(DessinJeu afficheurUtil,int x,int y)
+	public InterfaceGraphique(DessinJeu afficheurUtil, int x, int y)
 	{
 		//creation JFrame
 		JFrame f=new JFrame();

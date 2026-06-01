@@ -1,3 +1,5 @@
+package moteurJeu;
+
 import java.awt.image.BufferedImage;
 
 /**
@@ -9,7 +11,7 @@ public interface DessinJeu {
 
 	/**
 	 * methode dessiner a completer. Elle construit une image correspondant au
-	 * jeu. Jeu est un attribut de l'afficheur
+	 * jeu. moteurJeu.Jeu est un attribut de l'afficheur
 	 * 
 	 * @param image
 	 *            image sur laquelle dessiner

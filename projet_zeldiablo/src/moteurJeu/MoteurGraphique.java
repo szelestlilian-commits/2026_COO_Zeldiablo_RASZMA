@@ -1,5 +1,7 @@
+package moteurJeu;
+
 /**
- * classe MoteurGraphique represente un moteur de jeu generique.
+ * classe moteurJeu.MoteurGraphique represente un moteur de jeu generique.
  * 
  * On lui passe un jeu et un afficheur et il permet d'executer un jeu.
  */

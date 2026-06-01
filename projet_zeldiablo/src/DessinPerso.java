@@ -1,10 +1,12 @@
+import moteurJeu.DessinJeu;
+
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 
 
-public class DessinPerso implements DessinJeu{
+public class DessinPerso implements DessinJeu {
 
     public static final int TAILLE = 40;
 
