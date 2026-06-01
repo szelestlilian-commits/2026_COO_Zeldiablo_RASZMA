@@ -56,6 +56,13 @@ public class Monstre {
         y = meilleurY;
     }
 
+    /**
+     * 
+     * @param nx
+     * @param ny
+     * @param monstres
+     * @return
+     */
     private boolean caseOccupee(int nx, int ny, List<Monstre> monstres) {
         for (Monstre m : monstres) {
             if (m != this && m.getX() == nx && m.getY() == ny) {
