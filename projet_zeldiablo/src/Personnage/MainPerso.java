@@ -1,3 +1,5 @@
+package Personnage;
+
 import moteurJeu.MoteurGraphique;
 
 public class MainPerso {

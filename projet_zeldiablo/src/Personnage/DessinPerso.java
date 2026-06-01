@@ -1,3 +1,6 @@
+package Personnage;
+
+import Labyrinthe.Labyrinthe;
 import moteurJeu.DessinJeu;
 
 import java.awt.Color;

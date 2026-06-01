@@ -1,3 +1,5 @@
+package Labyrinthe;
+
 import java.util.Random;
 
 public class Labyrinthe {
