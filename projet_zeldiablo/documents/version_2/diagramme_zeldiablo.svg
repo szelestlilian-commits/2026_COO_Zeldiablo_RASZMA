@@ -31,16 +31,16 @@
 
 <!-- Classes -->
 <rect class="cls" x="500" y="40" width="360" height="180"/>
-<text class="txt" x="620" y="70">JeuZeldiablo</text>
+<text class="txt" x="620" y="70">JeuPerso</text>
 <line x1="500" y1="85" x2="860" y2="85" stroke="black"/>
-<text class="txt small" x="515" y="110">+JeuZeldiablo()</text>
+<text class="txt small" x="515" y="110">+JeuPerso()</text>
 <text class="txt small" x="515" y="135">+evoluer(Commande) : void</text>
 <text class="txt small" x="515" y="160">+etreFini() : boolean</text>
 
 <rect class="cls" x="500" y="300" width="420" height="160"/>
-<text class="txt" x="650" y="330">DessinZeldiablo</text>
+<text class="txt" x="650" y="330">DessinPerso</text>
 <line x1="500" y1="345" x2="920" y2="345" stroke="black"/>
-<text class="txt small" x="515" y="370">+DessinZeldiablo(JeuZeldiablo)</text>
+<text class="txt small" x="515" y="370">+DessinPerso(JeuPerso)</text>
 <text class="txt small" x="515" y="395">+dessiner(BufferedImage) : void</text>
 
 <rect class="cls" x="1040" y="60" width="260" height="120"/>
@@ -50,11 +50,11 @@
 <text class="txt small" x="1055" y="155">+Labyrinthe()</text>
 
 <rect class="cls" x="1040" y="300" width="260" height="140"/>
-<text class="txt" x="1150" y="330">Heros</text>
+<text class="txt" x="1150" y="330">Personnage</text>
 <line x1="1040" y1="345" x2="1300" y2="345" stroke="black"/>
 <text class="txt small" x="1055" y="370">-x : int</text>
 <text class="txt small" x="1055" y="395">-y : int</text>
-<text class="txt small" x="1055" y="420">+deplacer(String) : void</text>
+<text class="txt small" x="1055" y="420">+deplacer(Commande, Labyrinthe) : void</text>
 
 <!-- Relations -->
 <line x1="340" y1="130" x2="500" y2="130" stroke="black" stroke-dasharray="8,4"/>
