@@ -23,19 +23,15 @@ public class Personnage {
      * Déplace le personnage en fonction de la commande utilisateur.
      * @param c la commande issue du moteur de jeu
      */
-    public void deplacer(Commande c) {
-        if (c.gauche) {
-            this.x--;
-        }
-        if (c.droite) {
-            this.x++;
-        }
-        if (c.haut) {
-            this.y--;
-        }
-        if (c.bas) {
-            this.y++;
-        }
+    public void deplacer(Commande c, Labyrinthe laby) {
+        if (c.gauche && !laby.estMur(x - 1, y))
+            x--;
+        if (c.droite && !laby.estMur(x + 1, y))
+            x++;
+        if (c.haut && !laby.estMur(x, y - 1))
+            y--;
+        if (c.bas && !laby.estMur(x, y + 1))
+            y++;
     }
 
     /**

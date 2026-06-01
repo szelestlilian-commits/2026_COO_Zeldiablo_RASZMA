@@ -9,11 +9,13 @@ public class JeuPerso implements Jeu {
 
     /** Le personnage contrôlé par le joueur */
     private Personnage pj;
+    private Labyrinthe labyrinthe;
 
     /**
      * Construit le jeu et initialise le personnage.
      */
     public JeuPerso() {
+        this.labyrinthe = new Labyrinthe();
         this.pj = new Personnage();
     }
 
@@ -23,7 +25,7 @@ public class JeuPerso implements Jeu {
      * @param c commande utilisateur fournie par le moteur
      */
     public void evoluer(Commande c) {
-        this.pj.deplacer(c);
+        pj.deplacer(c, labyrinthe);
     }
 
     @Override
@@ -41,4 +43,7 @@ public class JeuPerso implements Jeu {
     public Personnage getPj() {
         return pj;
     }
+
+
+    public Labyrinthe getLabyrinthe() { return labyrinthe; }
 }
