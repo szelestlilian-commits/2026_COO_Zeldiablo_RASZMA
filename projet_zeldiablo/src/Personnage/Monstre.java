@@ -57,7 +57,7 @@ public class Monstre {
     }
 
     /**
-     * 
+     *
      * @param nx
      * @param ny
      * @param monstres
