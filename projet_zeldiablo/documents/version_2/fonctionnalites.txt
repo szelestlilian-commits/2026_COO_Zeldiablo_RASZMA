@@ -1,21 +1,22 @@
 # Fonctionnalités prévues version 2
 
-- fonctionnalité 1 : nom
-  - descriptif texte : [...]
+- fonctionnalité 1 : Création d'un labyrinthe par défaut (1.1)
+  - descriptif texte : Au lancement du jeu, un labyrinthe de taille 10x10 est créé automatiquement avec des murs sur les bordures. Le personnage est placé au centre en (5,5).
   - critères de validation :
-    - critère 1 [...]
-    - critère 2 [...]
-  - responsables : [...]
+    - Le labyrinthe par défaut est constitué d'une arène de taille 10*10 
+    - Le personnage est placé au centre de l'arène 
+  - responsables : [MARIN Clément et SZELEST Lilian]
 
-- fonctionnalité 2 : nom
-  - descriptif texte : [...]
+- fonctionnalité 2 : Collision avec les Murs (1.2)
+  - descriptif texte : Lorsque le joueur tente de déplacer le personnage vers une case contenant un mur, le personnage reste bloqué et ne se déplace pas.
   - critères de validation :
-    - critère 1 [...]
-    - critère 2 [...]
-  - responsables : [...]
-
-[....]
+    - La collision fonctionne dans les 4 directions 
+    - Si la case est vide, le personnage avance 
+  - responsables : [MARIN Clément et SZELEST Lilian]
 
 # Bilan
 
-- Quelles fonctionnalités est validée ?
+- Fonctionnalités validées : 1.1 Création d'un labyrinthe par défaut et 1.2 Collision avec les murs
+- Problèmes rencontrés : le personnage disparaissait car il était dessiné avant les murs, résolu en inversant l'ordre de dessin dans DessinPerso
+- Modifications de la conception : ajout de la classe Labyrinthe avec un tableau boolean[][] mur, modification de la méthode deplacer() de Personnage pour prendre le labyrinthe en paramètre
+-Diagramme de Classe et de Sequence a jour (Paul)
