@@ -1,7 +1,7 @@
 public class Labyrinthe {
 
-    public static final int LARGEUR = 10;
-    public static final int HAUTEUR = 10;
+    public static final int LARGEUR = 30;
+    public static final int HAUTEUR = 30;
 
     private boolean[][] mur;  // attribut direct
 
