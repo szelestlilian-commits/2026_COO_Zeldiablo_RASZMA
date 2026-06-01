@@ -1,5 +1,3 @@
-package moteurJeu;
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

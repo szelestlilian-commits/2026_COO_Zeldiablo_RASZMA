@@ -1,5 +1,3 @@
-package moteurJeu;
-
 import java.awt.image.BufferedImage;
 
 /**

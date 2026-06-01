@@ -1,5 +1,3 @@
-package moteurJeu;
-
 import javax.swing.JFrame;
 
 
