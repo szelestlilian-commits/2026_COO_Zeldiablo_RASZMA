@@ -31,10 +31,6 @@ public class JeuPerso implements Jeu {
         monstres.add(new Monstre(8, 1));
         monstres.add(new Monstre(1, 8));
         monstres.add(new Monstre(8, 8));
-
-        for (Monstre m : monstres) {
-            m.deplacer(pj, labyrinthe);
-        }
     }
 
     @Override
@@ -43,7 +39,14 @@ public class JeuPerso implements Jeu {
      * @param c commande utilisateur fournie par le moteur
      */
     public void evoluer(Commande c) {
-        pj.deplacer(c, labyrinthe);
+
+        boolean aBouge = pj.deplacer(c, labyrinthe);
+
+        if (aBouge) {
+            for (Monstre m : monstres) {
+                m.deplacer(pj, labyrinthe, monstres);
+            }
+        }
     }
 
     @Override

@@ -2,6 +2,8 @@ package Personnage;
 
 import Labyrinthe.Labyrinthe;
 
+import java.util.List;
+
 
 /**
  * Représente un monstre qui se déplace vers le héros
@@ -25,7 +27,7 @@ public class Monstre {
      * @param heros     le personnage à pourchasser
      * @param labyrinthe la carte avec les murs
      */
-    public void deplacer(Personnage heros, Labyrinthe labyrinthe) {
+    public void deplacer(Personnage heros, Labyrinthe labyrinthe, List<Monstre> monstres) {
         int distanceActuelle = distanceManhattan(heros);
 
         // Les 4 déplacements possibles : [dx, dy]
@@ -40,7 +42,7 @@ public class Monstre {
             int ny = y + dir[1];
 
             // Vérifie qu'il n'y a pas de mur et que la case est dans la grille
-            if (!labyrinthe.estMur(nx, ny)) {
+            if (!labyrinthe.estMur(nx, ny) &&  !caseOccupee(nx, ny, monstres)) {
                 int dist = Math.abs(nx - heros.getX()) + Math.abs(ny - heros.getY());
                 if (dist < meilleureDist) {
                     meilleureDist = dist;
@@ -52,6 +54,15 @@ public class Monstre {
 
         x = meilleurX;
         y = meilleurY;
+    }
+
+    private boolean caseOccupee(int nx, int ny, List<Monstre> monstres) {
+        for (Monstre m : monstres) {
+            if (m != this && m.getX() == nx && m.getY() == ny) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
