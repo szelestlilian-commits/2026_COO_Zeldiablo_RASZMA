@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 public class DessinPerso implements DessinJeu {
 
-    public static final int TAILLE = 40;
+    public static final int TAILLE = 15;
 
     private JeuPerso jeuEnCours;
 
