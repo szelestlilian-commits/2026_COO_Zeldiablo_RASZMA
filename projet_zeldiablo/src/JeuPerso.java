@@ -16,6 +16,7 @@ public class JeuPerso implements Jeu {
      */
     public JeuPerso() {
         this.labyrinthe = new Labyrinthe();
+        this.labyrinthe.placerMursAleatoires(100);
         this.pj = new Personnage();
     }
 

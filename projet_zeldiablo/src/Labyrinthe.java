@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Labyrinthe {
 
     public static final int LARGEUR = 30;
@@ -21,5 +23,25 @@ public class Labyrinthe {
 
     public boolean estMur(int x, int y) {
         return mur[x][y];
+    }
+
+    /**
+     * Place un certain nombre de murs aléatoirement sur les cases intérieures de la carte.
+     * @param nombre
+     */
+    public void placerMursAleatoires(int nombre){
+        Random random = new Random();
+        int places = 0;
+
+        while (places < nombre){
+            int x = 1 + random.nextInt(LARGEUR - 2);
+            int y = 1 + random.nextInt(HAUTEUR - 2);
+
+            //on évite de spawn sur le perso
+            if (!mur[x][y] && !(x==5 && y==5)){
+                mur[x][y] = true;
+                places++;
+            }
+        }
     }
 }
