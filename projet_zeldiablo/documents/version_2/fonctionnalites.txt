@@ -17,6 +17,6 @@
 # Bilan
 
 - Fonctionnalités validées : 1.1 Création d'un labyrinthe par défaut et 1.2 Collision avec les murs
-- Problèmes rencontrés : le personnage disparaissait car il était dessiné avant les murs, résolu en inversant l'ordre de dessin dans DessinPerso
-- Modifications de la conception : ajout de la classe Labyrinthe avec un tableau boolean[][] mur, modification de la méthode deplacer() de Personnage pour prendre le labyrinthe en paramètre
+- Problèmes rencontrés : le personnage disparaissait car il était dessiné avant les murs, résolu en inversant l'ordre de dessin dans Personnage.DessinPerso
+- Modifications de la conception : ajout de la classe Labyrinthe.Labyrinthe avec un tableau boolean[][] mur, modification de la méthode deplacer() de Personnage.Personnage pour prendre le labyrinthe en paramètre
 -Diagramme de Classe et de Sequence a jour (Paul)
