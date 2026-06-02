@@ -1,49 +1,56 @@
 package Labyrinthe;
 
-import java.util.Random;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 public class Labyrinthe {
 
-    public static final int LARGEUR = 30;
-    public static final int HAUTEUR = 30;
+    private boolean[][] mur;
+    private int spawnHeroX;
+    private int spawnHeroY;
 
-    private boolean[][] mur;  // attribut direct
 
-    public Labyrinthe() {
-        mur = new boolean[LARGEUR][HAUTEUR];
+    public Labyrinthe(String fichier) throws IOException{
 
-        // murs sur les bordures
-        for (int x = 0; x < LARGEUR; x++) {
-            mur[x][0] = true;
-            mur[x][HAUTEUR - 1] = true;
-        }
-        for (int y = 0; y < HAUTEUR; y++) {
-            mur[0][y] = true;
-            mur[LARGEUR - 1][y] = true;
-        }
-    }
+        List<String> lignes = Files.readAllLines(Paths.get(fichier));
 
-    public boolean estMur(int x, int y) {
-        return mur[x][y];
-    }
+        int Hauteur = lignes.size();
+        int Largeur = lignes.get(0).length();
 
-    /**
-     * Place un certain nombre de murs aléatoirement sur les cases intérieures de la carte.
-     * @param nombre
-     */
-    public void placerMursAleatoires(int nombre){
-        Random random = new Random();
-        int places = 0;
+        mur = new boolean[Largeur][Hauteur];
 
-        while (places < nombre){
-            int x = 1 + random.nextInt(LARGEUR - 2);
-            int y = 1 + random.nextInt(HAUTEUR - 2);
+        for(int y = 0; y < Hauteur; y++){
+            String ligne = lignes.get(y);
 
-            //on évite de spawn sur le perso
-            if (!mur[x][y] && !(x==5 && y==5)){
-                mur[x][y] = true;
-                places++;
+            for (int x = 0; x < Largeur; x++){
+                char c = ligne.charAt(x);
+
+                switch (c){
+                    case '#':
+                        mur[x][y] = true;
+                        break;
+
+                    case 'H':
+                        spawnHeroX = x;
+                        spawnHeroY = y;
+                        break;
+
+                }
             }
         }
     }
+    public int getSpawnHeroX() {
+        return spawnHeroX;
+    }
+
+    public int getSpawnHeroY() {
+        return spawnHeroY;
+    }
+
+
 }

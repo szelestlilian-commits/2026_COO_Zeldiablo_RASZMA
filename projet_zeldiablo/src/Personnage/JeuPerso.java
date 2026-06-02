@@ -23,14 +23,10 @@ public class JeuPerso implements Jeu {
      */
     public JeuPerso() {
         this.labyrinthe = new Labyrinthe();
-        this.labyrinthe.placerMursAleatoires(100);
         this.pj = new Personnage();
         this.monstres = new ArrayList<>();
 
         monstres.add(new Monstre(1, 1));
-        monstres.add(new Monstre(8, 1));
-        monstres.add(new Monstre(1, 8));
-        monstres.add(new Monstre(8, 8));
     }
 
     @Override

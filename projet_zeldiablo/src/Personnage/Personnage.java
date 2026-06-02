@@ -17,9 +17,9 @@ public class Personnage {
     /**
      * Construit un personnage positionné au centre d'une grille 10x10.
      */
-    public Personnage() {
-        this.x = 5;
-        this.y = 5;
+    public Personnage(int x , int y) {
+        this.x = x;
+        this.y = y;
     }
 
     /**
