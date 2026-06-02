@@ -1,0 +1,22 @@
+# Fonctionnalités prévues version 3
+
+- fonctionnalité 1 : Génération de Mur Aléatoire
+  - descriptif texte : Au lancement du jeu, un labyrinthe est crée avec mur aléatoire sur la map
+  - critères de validation :
+    - Le labyrinthe est généré
+    - Le personnage est placé en haut a gauche de la map
+  - responsables : [SZELEST Lilian]
+
+- fonctionnalité 2 : Déplacement aléatoire des monstres 2.2
+  - descriptif texte : Lorsque le joueur tente de déplacer le personnage vers une case contenant un mur, le personnage reste bloqué et ne se déplace pas.
+  - critères de validation :
+    - La collision fonctionne dans les 4 directions 
+    - Si la case est vide, le personnage avance 
+  - responsables : [SZELEST Lilian]
+
+# Bilan
+
+- Fonctionnalités validées : 1.1 Création d'un labyrinthe par défaut et 1.2 Collision avec les murs
+- Problèmes rencontrés : difficulté a faire se déplacer les monstre en direction du héro + difficulté rencontré avec les diagramme de classe et de sequences
+- Modifications de la conception : ajout de la classe monstre , avec deux attribut entier pour les positions int x ,private int y;
+-Diagramme de Classe et de Sequence a jour (Paul, Lilian, Clement)
