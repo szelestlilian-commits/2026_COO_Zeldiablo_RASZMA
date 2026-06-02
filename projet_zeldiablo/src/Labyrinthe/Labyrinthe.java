@@ -52,5 +52,9 @@ public class Labyrinthe {
         return spawnHeroY;
     }
 
+    public boolean estMur(int x, int y) {
+        return mur[x][y];
+    }
+
 
 }
