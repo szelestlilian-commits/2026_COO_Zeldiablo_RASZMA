@@ -21,14 +21,14 @@ public class Monstre {
 
     /**
      * Déplace le monstre vers le héros en choisissant parmi les 4 directions
-     * celle qui minimise la distance de Manhattan, sans traverser les murs.
+     * celle qui minimise la distanceM, sans traverser les murs.
      * Si toutes les directions sont bloquées, le monstre reste sur place.
      *
      * @param heros     le personnage à pourchasser
      * @param labyrinthe la carte avec les murs
      */
     public void deplacer(Personnage heros, Labyrinthe labyrinthe, List<Monstre> monstres) {
-        int distanceActuelle = distanceManhattan(heros);
+        int distanceActuelle = distanceM(heros);
 
         // Les 4 déplacements possibles : [dx, dy]
         int[][] directions = { {0, -1}, {0, 1}, {-1, 0}, {1, 0} };
@@ -60,7 +60,7 @@ public class Monstre {
      *
      * @param nx
      * @param ny
-     * @param monstres
+     * @param monstres une liste de monstre
      * @return
      */
     private boolean caseOccupee(int nx, int ny, List<Monstre> monstres) {
@@ -73,9 +73,9 @@ public class Monstre {
     }
 
     /**
-     * Calcule la distance de Manhattan entre ce monstre et le héros.
+     * Calcule la distance de M entre ce monstre et le héros.
      */
-    private int distanceManhattan(Personnage heros) {
+    private int distanceM(Personnage heros) {
         return Math.abs(x - heros.getX()) + Math.abs(y - heros.getY());
     }
 
