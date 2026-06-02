@@ -2,8 +2,8 @@ package Labyrinthe;
 
 public class Labyrinthe {
 
-    public static final int LARGEUR = 10;
-    public static final int HAUTEUR = 10;
+    public static final int LARGEUR = 15;
+    public static final int HAUTEUR = 15;
 
     private boolean[][] mur;
 
@@ -11,16 +11,21 @@ public class Labyrinthe {
     private int spawnHeroY;
 
     private final String[] PLAN = {
-            "##########",
-            "#........#",
-            "#.###.##.#",
-            "#.#....#.#",
-            "#.#.##.#.#",
-            "#...H..#.#",
-            "###.##.#.#",
-            "#...#....#",
-            "#.#.#.##.#",
-            "##########"
+            "###############",
+            "#.....#.......#",
+            "#.###.#.##.##.#",
+            "#...#.#.....#.#",
+            "###.#.##.##.#.#",
+            "#...#..H..#.#.#",
+            "#.##..###.#.#.#",
+            "#.......#.#...#",
+            "#####.#.#.#.###",
+            "#.....#.#.....#",
+            "#.#.###.#..##.#",
+            "#.....#.......#",
+            "#.###.###.###.#",
+            "#.............#",
+            "###############"
     };
 
     public Labyrinthe() {
