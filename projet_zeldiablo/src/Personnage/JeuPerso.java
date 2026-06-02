@@ -4,6 +4,7 @@ import Labyrinthe.Labyrinthe;
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,12 +22,12 @@ public class JeuPerso implements Jeu {
     /**
      * Construit le jeu et initialise le personnage.
      */
-    public JeuPerso() {
-        this.labyrinthe = new Labyrinthe();
-        this.pj = new Personnage();
-        this.monstres = new ArrayList<>();
-
-        monstres.add(new Monstre(1, 1));
+    public JeuPerso() throws IOException {
+        this.labyrinthe = new Labyrinthe("niveaux/niveau1.txt");
+        this.pj = new Personnage(
+                labyrinthe.getSpawnHeroX(),
+                labyrinthe.getSpawnHeroY()
+        );
     }
 
     @Override
