@@ -9,6 +9,6 @@ public class MainPerso {
     JeuPerso jeu = new JeuPerso();
     DessinPerso dessin = new DessinPerso(jeu);
     MoteurGraphique moteur = new MoteurGraphique(jeu, dessin);
-        moteur.lancerJeu(450, 450);
+        moteur.lancerJeu(225, 225);
     }
 }

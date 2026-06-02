@@ -1,49 +1,48 @@
 package Labyrinthe;
 
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
 public class Labyrinthe {
 
+    public static final int LARGEUR = 15;
+    public static final int HAUTEUR = 15;
+
     private boolean[][] mur;
+
     private int spawnHeroX;
     private int spawnHeroY;
 
+    public Labyrinthe() {
 
-    public Labyrinthe(String fichier) throws IOException{
+        mur = new boolean[LARGEUR][HAUTEUR];
 
-        List<String> lignes = Files.readAllLines(Paths.get(fichier));
-
-        int Hauteur = lignes.size();
-        int Largeur = lignes.get(0).length();
-
-        mur = new boolean[Largeur][Hauteur];
-
-        for(int y = 0; y < Hauteur; y++){
-            String ligne = lignes.get(y);
-
-            for (int x = 0; x < Largeur; x++){
-                char c = ligne.charAt(x);
-
-                switch (c){
-                    case '#':
-                        mur[x][y] = true;
-                        break;
-
-                    case 'H':
-                        spawnHeroX = x;
-                        spawnHeroY = y;
-                        break;
-
-                }
-            }
+        // Murs sur les bordures
+        for (int x = 0; x < LARGEUR; x++) {
+            mur[x][0] = true;
+            mur[x][HAUTEUR - 1] = true;
         }
+
+        for (int y = 0; y < HAUTEUR; y++) {
+            mur[0][y] = true;
+            mur[LARGEUR - 1][y] = true;
+        }
+
+        // Héros au centre
+        spawnHeroX = LARGEUR / 2;
+        spawnHeroY = HAUTEUR / 2;
     }
+
+    /**
+     * Retourne true si la case est un mur.
+     */
+    public boolean estMur(int x, int y) {
+
+        // Hors limites = mur
+        if (x < 0 || x >= LARGEUR || y < 0 || y >= HAUTEUR) {
+            return true;
+        }
+
+        return mur[x][y];
+    }
+
     public int getSpawnHeroX() {
         return spawnHeroX;
     }
@@ -51,10 +50,4 @@ public class Labyrinthe {
     public int getSpawnHeroY() {
         return spawnHeroY;
     }
-
-    public boolean estMur(int x, int y) {
-        return mur[x][y];
-    }
-
-
 }
