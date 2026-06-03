@@ -1,16 +1,30 @@
 # Fonctionnalités prévues version 3
 
-- fonctionnalité 1 : ajout de mur en dur
+- fonctionnalité 1 : ajout de mur en dur 
   - descriptif texte : Au lancement du jeu, un labyrinthe est crée avec des mur en dur sur la map
   - critères de validation :
     - Le labyrinthe est généré
     - Le personnage est placé au milieu de la map
   - responsables : [SZELEST Lilian , MARIN Clement]
 
+- fonctionnalité 2 : ajout de monstre sur la map
+  - descriptif texte : on a ajouté un monstre qui se déplace aléatoirement a chaque fois que le héro se déplace
+  - critères de validation :
+    - Le monstre est crée et se déplace aléatoirement
+  - responsables : [SZELEST Lilian , MARIN Clement]
+
+- fonctionnalité 2 : fin de jeu 
+  - descriptif texte : si le personnage et le monstre se retrouve au même endroit , alors le monstre tue le héro et c'est game over
+  - critères de validation : 
+    - le monstre tue bien le hero et le jeu prend fin avec un affichage "Game Over !"
+  - Le monstre est crée et se déplace aléatoirement
+  - responsables : [SZELEST Lilian , MARIN Clement , RAVONJISON Paul]
+
+
 
 # Bilan
 
-- Fonctionnalités validées : 1.1 Création d'un labyrinthe par défaut et 1.2 Collision avec les murs
-- Problèmes rencontrés : difficulté rencontré avec les diagramme de classe et de sequences
+- Fonctionnalités validées : ajout de monstre sur la map qui se déplace aléatoirement + tue le hero s'il se retrouve au meme coordonnées
+- Problèmes rencontrés : difficulté rencontré avec les diagramme de classe et de séquences ainsi qu'un difficulté a modifier les classes
 -Diagramme de Classe et de Sequence a jour (Paul, Lilian, Clement)
--ajout de tests par RAVONJISON Paul (relfexion a trois);
+-ajout de tests par RAVONJISON Paul et MARIN Clément (reflexion a trois);
