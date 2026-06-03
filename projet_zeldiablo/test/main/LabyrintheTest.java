@@ -4,7 +4,7 @@ import Labyrinthe.Labyrinthe;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LabyrintheTest {
+public class  LabyrintheTest {
 
     @Test
     public void testInitialisationBordures() {
