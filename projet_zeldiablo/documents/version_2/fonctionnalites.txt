@@ -1,11 +1,11 @@
 # Fonctionnalités prévues version 2
 
-- fonctionnalité 1 : Création d'un labyrinthe par défaut (1.1)
-  - descriptif texte : Au lancement du jeu, un labyrinthe de taille 10x10 est créé automatiquement avec des murs sur les bordures. Le personnage est placé au centre en (5,5).
+- fonctionnalité 1 : creation du labyrinthe + ajout de mur en dur 
+  - descriptif texte : Au lancement du jeu, un labyrinthe est crée avec des mur en dur sur la map ainsi que des bordure ( map de 15x15 )
   - critères de validation :
-    - Le labyrinthe par défaut est constitué d'une arène de taille 10*10 
-    - Le personnage est placé au centre de l'arène 
-  - responsables : [MARIN Clément et SZELEST Lilian]
+    - Le labyrinthe est généré
+    - Le personnage est placé au milieu de la map
+  - responsables : [SZELEST Lilian , MARIN Clement]
 
 - fonctionnalité 2 : Collision avec les Murs (1.2)
   - descriptif texte : Lorsque le joueur tente de déplacer le personnage vers une case contenant un mur, le personnage reste bloqué et ne se déplace pas.

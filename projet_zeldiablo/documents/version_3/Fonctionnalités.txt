@@ -1,13 +1,6 @@
 # Fonctionnalités prévues version 3
 
-- fonctionnalité 1 : ajout de mur en dur 
-  - descriptif texte : Au lancement du jeu, un labyrinthe est crée avec des mur en dur sur la map
-  - critères de validation :
-    - Le labyrinthe est généré
-    - Le personnage est placé au milieu de la map
-  - responsables : [SZELEST Lilian , MARIN Clement]
-
-- fonctionnalité 2 : ajout de monstre sur la map
+- fonctionnalité 1 : ajout de monstre sur la map
   - descriptif texte : on a ajouté un monstre qui se déplace aléatoirement a chaque fois que le héro se déplace
   - critères de validation :
     - Le monstre est crée et se déplace aléatoirement
