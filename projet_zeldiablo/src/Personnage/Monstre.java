@@ -1,26 +1,19 @@
 package Personnage;
 
 import Labyrinthe.Labyrinthe;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Monstre {
+public class Monstre extends PersoZeldiablo {
 
-    private int x;
-    private int y;
     private static final Random random = new Random();
 
     public Monstre(int x, int y) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
     }
 
-    /**
-     *
-     * @param laby
-     */
+    @Override
     public void deplacer(Labyrinthe laby) {
         int[][] directions = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
 
@@ -39,7 +32,4 @@ public class Monstre {
             y = choix[1];
         }
     }
-
-    public int getX() { return x; }
-    public int getY() { return y; }
 }
