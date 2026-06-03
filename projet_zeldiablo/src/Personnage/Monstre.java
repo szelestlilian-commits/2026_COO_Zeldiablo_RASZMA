@@ -32,4 +32,8 @@ public class Monstre extends PersoZeldiablo {
             y = choix[1];
         }
     }
+
+
+    public boolean toucheHeros(Personnage heros) {
+        return this.x == heros.getX() && this.y == heros.getY();}
 }

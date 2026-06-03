@@ -20,7 +20,7 @@ public class JeuPerso implements Jeu {
 
     private Monstre monstre;
 
-    private boolean gameOver = false;
+    private static boolean gameOver = false;
 
 
     /**
@@ -49,6 +49,10 @@ public class JeuPerso implements Jeu {
         boolean aBouge = pj.deplacer(c, labyrinthe);
         if (aBouge) {
             monstre.deplacer(labyrinthe);
+            if (monstre.toucheHeros(pj)) {
+                gameOver = true;
+                return;
+            }
 
         }
     }
@@ -61,7 +65,7 @@ public class JeuPerso implements Jeu {
         return gameOver;
     }
 
-    public boolean isGameOver() {
+    public static boolean isGameOver() {
         return gameOver;
     }
 

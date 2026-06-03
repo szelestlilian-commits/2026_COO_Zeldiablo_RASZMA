@@ -3,8 +3,7 @@ package Personnage;
 import Labyrinthe.Labyrinthe;
 import moteurJeu.DessinJeu;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class DessinPerso implements DessinJeu {
@@ -43,6 +42,13 @@ public class DessinPerso implements DessinJeu {
         Monstre m = jeuEnCours.getMonstre();
         g.setColor(Color.RED);
         g.fillOval(m.getX() * TAILLE, m.getY() * TAILLE, TAILLE, TAILLE);
+
+        if (JeuPerso.isGameOver()) {
+            g.setColor(Color.RED);
+            g.setFont(new Font("Arial", Font.BOLD, 22));
+            g.drawString("GAME OVER !", 40, 125);
+            return;
+        }
     }
 
 
