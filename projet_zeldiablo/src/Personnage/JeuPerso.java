@@ -11,13 +11,10 @@ import java.util.List;
  * Jeu simple dans lequel un personnage se déplace librement.
  */
 public class JeuPerso implements Jeu {
-
-    /** Le personnage contrôlé par le joueur */
     private Personnage pj;
-
     private Labyrinthe labyrinthe;
-
     private List<Monstre> monstres;
+    private boolean gameOver = false;
 
     /**
      * Construit le jeu et initialise le personnage.
@@ -32,23 +29,36 @@ public class JeuPerso implements Jeu {
         );
 
         monstres = new ArrayList<>();
+        monstres.add(new Monstre(1, 1));
+        monstres.add(new Monstre(13, 1));
+        monstres.add(new Monstre(1, 13));
+
+        gameOver = false;
     }
 
     @Override
     public void evoluer(Commande c) {
-
+        if (gameOver) return;  // on gèle le jeu si c'est terminé
         boolean aBouge = pj.deplacer(c, labyrinthe);
-
         if (aBouge) {
             for (Monstre m : monstres) {
-                m.deplacer(pj, labyrinthe, monstres);
+                m.deplacer(labyrinthe, monstres);  // ← nouvelle signature sans heros
+                if (m.toucheHeros(pj)) {
+                    gameOver = true;
+                    return;
+                }
             }
         }
+    }
     }
 
     @Override
     public boolean etreFini() {
-        return false;
+        return gameOver;
+    }
+
+    public boolean isGameOver() {
+        return gameOver;
     }
 
     public Personnage getPj() {
