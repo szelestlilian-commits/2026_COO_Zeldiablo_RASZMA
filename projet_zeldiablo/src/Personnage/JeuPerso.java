@@ -46,22 +46,16 @@ public class JeuPerso implements Jeu {
 
     @Override
     public void evoluer(Commande c) {
-        if (gameOver) return;
-
         boolean aBouge = pj.deplacer(c, labyrinthe);
         if (aBouge) {
             monstre.deplacer(labyrinthe);
 
-                if (monstre.toucheHeros(pj)) {
-                    gameOver = true;
-                    return;
-                }
-            }
         }
-    
+    }
 
 
 
+    //future itération pour une fin de partie
     @Override
     public boolean etreFini() {
         return gameOver;
