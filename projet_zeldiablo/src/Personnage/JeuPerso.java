@@ -81,4 +81,4 @@ public class JeuPerso implements Jeu {
         return monstre;
     }
 
-    }
+}
