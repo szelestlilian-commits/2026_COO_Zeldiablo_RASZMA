@@ -20,7 +20,6 @@ public class JeuPerso implements Jeu {
 
     private Monstre monstre;
 
-    private List<Monstre> monstres;
     private boolean gameOver = false;
 
 
@@ -41,34 +40,26 @@ public class JeuPerso implements Jeu {
                 labyrinthe.getSpawnMonstreX(),
                 labyrinthe.getSpawnMonstreY()
         );
-
-        monstres = new ArrayList<>();
-        monstres.add(new Monstre(1, 1));
-        monstres.add(new Monstre(13, 1));
-        monstres.add(new Monstre(1, 13));
-
         gameOver = false;
 
     }
 
     @Override
     public void evoluer(Commande c) {
-        if (gameOver) return;  // on gèle le jeu si c'est terminé
+        if (gameOver) return;
+
         boolean aBouge = pj.deplacer(c, labyrinthe);
         if (aBouge) {
-
             monstre.deplacer(labyrinthe);
 
-            for (Monstre m : monstres) {
-                m.deplacer(labyrinthe, monstres);  // ← nouvelle signature sans heros
-                if (m.toucheHeros(pj)) {
+                if (monstre.toucheHeros(pj)) {
                     gameOver = true;
                     return;
                 }
             }
         }
-    }
-    }
+    
+
 
 
     @Override
