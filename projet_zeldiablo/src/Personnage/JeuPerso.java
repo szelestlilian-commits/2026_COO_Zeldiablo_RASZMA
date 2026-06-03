@@ -13,11 +13,16 @@ public class JeuPerso implements Jeu {
     /**
      * Le personnage contrôlé par le joueur
      */
-    private Personnage pj;
 
+    private Personnage pj;
     private Labyrinthe labyrinthe;
 
+
     private Monstre monstre;
+
+    private List<Monstre> monstres;
+    private boolean gameOver = false;
+
 
     /**
      * Construit le jeu et initialise le personnage.
@@ -31,26 +36,48 @@ public class JeuPerso implements Jeu {
                 labyrinthe.getSpawnHeroY()
         );
 
+
         monstre = new Monstre(
                 labyrinthe.getSpawnMonstreX(),
                 labyrinthe.getSpawnMonstreY()
         );
+
+        monstres = new ArrayList<>();
+        monstres.add(new Monstre(1, 1));
+        monstres.add(new Monstre(13, 1));
+        monstres.add(new Monstre(1, 13));
+
+        gameOver = false;
+
     }
 
     @Override
     public void evoluer(Commande c) {
-
+        if (gameOver) return;  // on gèle le jeu si c'est terminé
         boolean aBouge = pj.deplacer(c, labyrinthe);
-
         if (aBouge) {
+
             monstre.deplacer(labyrinthe);
+
+            for (Monstre m : monstres) {
+                m.deplacer(labyrinthe, monstres);  // ← nouvelle signature sans heros
+                if (m.toucheHeros(pj)) {
+                    gameOver = true;
+                    return;
+                }
+            }
         }
+    }
     }
 
 
     @Override
     public boolean etreFini() {
-        return false;
+        return gameOver;
+    }
+
+    public boolean isGameOver() {
+        return gameOver;
     }
 
     public Personnage getPj() {
