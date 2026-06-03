@@ -4,20 +4,20 @@ import Labyrinthe.Labyrinthe;
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Jeu simple dans lequel un personnage se déplace librement.
  */
 public class JeuPerso implements Jeu {
 
-    /** Le personnage contrôlé par le joueur */
+    /**
+     * Le personnage contrôlé par le joueur
+     */
     private Personnage pj;
 
     private Labyrinthe labyrinthe;
 
-    private List<Monstre> monstres;
+    private Monstre monstre;
 
     /**
      * Construit le jeu et initialise le personnage.
@@ -31,7 +31,10 @@ public class JeuPerso implements Jeu {
                 labyrinthe.getSpawnHeroY()
         );
 
-        monstres = new ArrayList<>();
+        monstre = new Monstre(
+                labyrinthe.getSpawnMonstreX(),
+                labyrinthe.getSpawnMonstreY()
+        );
     }
 
     @Override
@@ -40,11 +43,10 @@ public class JeuPerso implements Jeu {
         boolean aBouge = pj.deplacer(c, labyrinthe);
 
         if (aBouge) {
-            for (Monstre m : monstres) {
-                m.deplacer(pj, labyrinthe, monstres);
-            }
+            monstre.deplacer(labyrinthe);
         }
     }
+
 
     @Override
     public boolean etreFini() {
@@ -59,7 +61,8 @@ public class JeuPerso implements Jeu {
         return labyrinthe;
     }
 
-    public List<Monstre> getMonstres() {
-        return monstres;
+    public Monstre getMonstre() {
+        return monstre;
     }
-}
+
+    }

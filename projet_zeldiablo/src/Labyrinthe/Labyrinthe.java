@@ -10,6 +10,9 @@ public class Labyrinthe {
     private int spawnHeroX;
     private int spawnHeroY;
 
+    private int spawnMonstreX;
+    private int spawnMonstreY;
+
     private final String[] PLAN = {
             "###############",
             "#.....#.......#",
@@ -20,7 +23,7 @@ public class Labyrinthe {
             "#.##..###.#.#.#",
             "#.......#.#...#",
             "#####.#.#.#.###",
-            "#.....#.#.....#",
+            "#.....#.#...M.#",
             "#.#.###.#..##.#",
             "#.....#.......#",
             "#.###.###.###.#",
@@ -44,6 +47,10 @@ public class Labyrinthe {
                         spawnHeroX = x;
                         spawnHeroY = y;
                         break;
+                    case 'M':
+                        spawnMonstreX = x;
+                        spawnMonstreY = y;
+                        break;
                 }
             }
         }
@@ -66,4 +73,8 @@ public class Labyrinthe {
     public int getSpawnHeroY() {
         return spawnHeroY;
     }
+
+    public int getSpawnMonstreX(){ return spawnMonstreX; }
+
+    public int getSpawnMonstreY(){ return spawnMonstreY; }
 }

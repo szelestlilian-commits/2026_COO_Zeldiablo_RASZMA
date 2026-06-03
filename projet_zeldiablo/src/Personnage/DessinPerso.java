@@ -40,10 +40,9 @@ public class DessinPerso implements DessinJeu {
         g.setColor(Color.BLUE);
         g.fillOval(pj.getX() * TAILLE, pj.getY() * TAILLE, TAILLE, TAILLE);
 
-        for (Monstre m : jeuEnCours.getMonstres()) {
-            g.setColor(Color.RED);
-            g.fillOval(m.getX() * TAILLE, m.getY() * TAILLE, TAILLE, TAILLE);
-        }
+        Monstre m = jeuEnCours.getMonstre();
+        g.setColor(Color.RED);
+        g.fillOval(m.getX() * TAILLE, m.getY() * TAILLE, TAILLE, TAILLE);
     }
 
 

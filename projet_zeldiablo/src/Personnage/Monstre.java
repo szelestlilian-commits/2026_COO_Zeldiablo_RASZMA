@@ -2,17 +2,15 @@ package Personnage;
 
 import Labyrinthe.Labyrinthe;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-
-/**
- * Représente un monstre qui se déplace vers le héros
- * en réduisant sa distance de Manhattan à chaque tour.
- */
 public class Monstre {
 
     private int x;
     private int y;
+    private static final Random random = new Random();
 
     public Monstre(int x, int y) {
         this.x = x;
@@ -20,64 +18,30 @@ public class Monstre {
     }
 
     /**
-     * Déplace le monstre vers le héros en choisissant parmi les 4 directions
-     * celle qui minimise la distanceM, sans traverser les murs.
-     * Si toutes les directions sont bloquées, le monstre reste sur place.
      *
-     * @param heros     le personnage à pourchasser
-     * @param labyrinthe la carte avec les murs
+     * @param laby
      */
-    public void deplacer(Personnage heros, Labyrinthe labyrinthe, List<Monstre> monstres) {
-        int distanceActuelle = distanceM(heros);
+    public void deplacer(Labyrinthe laby) {
+        int[][] directions = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
 
-        // Les 4 déplacements possibles : [dx, dy]
-        int[][] directions = { {0, -1}, {0, 1}, {-1, 0}, {1, 0} };
-
-        int meilleurX = x;
-        int meilleurY = y;
-        int meilleureDist = distanceActuelle;
-
+        List<int[]> possibles = new ArrayList<>();
         for (int[] dir : directions) {
             int nx = x + dir[0];
             int ny = y + dir[1];
-
-            // Vérifie qu'il n'y a pas de mur et que la case est dans la grille
-            if (!labyrinthe.estMur(nx, ny) &&  !caseOccupee(nx, ny, monstres)) {
-                int dist = Math.abs(nx - heros.getX()) + Math.abs(ny - heros.getY());
-                if (dist < meilleureDist) {
-                    meilleureDist = dist;
-                    meilleurX = nx;
-                    meilleurY = ny;
-                }
+            if (!laby.estMur(nx, ny)) {
+                possibles.add(new int[]{nx, ny});
             }
         }
 
-        x = meilleurX;
-        y = meilleurY;
-    }
-
-    /**
-     *
-     * @param nx
-     * @param ny
-     * @param monstres une liste de monstre
-     * @return
-     */
-    private boolean caseOccupee(int nx, int ny, List<Monstre> monstres) {
-        for (Monstre m : monstres) {
-            if (m != this && m.getX() == nx && m.getY() == ny) {
-                return true;
-            }
+        if (!possibles.isEmpty()) {
+            int[] choix = possibles.get(random.nextInt(possibles.size()));
+            x = choix[0];
+            y = choix[1];
         }
-        return false;
     }
 
-    /**
-     * Calcule la distance de M entre ce monstre et le héros.
-     */
-    private int distanceM(Personnage heros) {
-        return Math.abs(x - heros.getX()) + Math.abs(y - heros.getY());
-    }
+
+
 
     public int getX() { return x; }
     public int getY() { return y; }
